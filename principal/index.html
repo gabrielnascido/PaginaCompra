@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iCell.er</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div id="cabecalho">
+            <a id="logo-iceller" href="./index.html" title="iCell.er"><img src="./assets/logo-iceller.png"></a>
+        </div>
+        <div id="menu-container">
+            <nav>
+                <div id="item-menu-inicial">
+                    <a class="menu-item" href="../principal/index.html">PÁGINA INICIAL</a>
+                </div>
+                <div id="item-menu-novos">
+                    <a class="menu-item"
+                        href="../produtos/index.html">IPHONES
+                        NOVOS</a>
+                </div>
+                <div id="item-menu-seminovos">
+                    <a class="menu-item">IPHONES SEMINOVOS</a>
+                </div>
+                <div id="item-menu-acessorios">
+                    <a class="menu-item">ACESSORIOS</a>
+                </div>
+                <div id="item-menu-lancamentos">
+                    <a class="menu-item">LANCAMENTOS (PRE-VENDA)</a>
+                </div>
+            </nav>
+            <a id="botao-pesquisa"><img src="./assets/botao-pesquisa.png"></a>
+            <div id="login-usuario">
+                <a id="botao-usuario"
+                    href="../usuario/index.html"><img
+                        src="./assets/botao-usuario.png"></a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="project-img">
+                        <img src="./assets/carrosel-imagem-1.png" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="project-img">
+                        <img src="./assets/carrosel-imagem-2.png" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="project-img">
+                        <img src="assets/carrosel-imagem-3.png" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="project-img">
+                        <img src="./assets/carrosel-imagem-4.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+
+        </div>
+        <div id="produtos-destaque">
+            <h2>D E S T A Q U E S</h2>
+            <ul>
+                <li>
+                    <div class="produto-destaque" onclick="mostrarModal(this)">
+                            <div class="imagem-produto-destaque">
+                                <img src="assets/airfone.jpg" alt="">
+                            </div>
+                        </a>
+                        <div class="texto-produto-destaque">
+                            <span class="tag-produto-destaque">OFERTA</span>
+                            <h3 class="nome-produto-destaque"> AIR FONE</h3>
+                            <h2 class="valor-produto-destaque">R$ 100,00</h2>
+                            <p class="descricao-produto" style="display: none;">Fones de ótima qualidade que oferecem
+                                conforto, cancelamento do ruido e a melhor experiencia que poderia ter</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="produto-destaque" onclick="mostrarModal(this)">
+                            <div class="imagem-produto-destaque">
+                                <img src="assets/airpod.jpg" alt="">
+                            </div>
+                        </a>
+                        <div class="texto-produto-destaque">
+                            <span class="tag-produto-destaque">LANÇAMENTO</span>
+                            <h3 class="nome-produto-destaque"> AIR PODS</h3>
+                            <h2 class="valor-produto-destaque">R$ 200,00</h2>
+                            <p class="descricao-produto" style="display: none;">O AirPods Pro (2ª geração) oferece
+                                excelente cancelamento de ruído e qualidade de som aprimorada. O design dos AirPods é
+                                minimalista e elegante, e eles são fáceis de usar e emparelhar com dispositivos Apple.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="produto-destaque" onclick="mostrarModal(this)">
+                            <div class="imagem-produto-destaque">
+                                <img src="assets/ipad.jpeg" alt="">
+                            </div>
+                        </a>
+                        <div class="texto-produto-destaque">
+                            <span class="tag-produto-destaque">PRÉ-VENDA</span>
+                            <h3 class="nome-produto-destaque"> IPAD</h3>
+                            <h2 class="valor-produto-destaque">R$ 300,00</h2>
+                            <p class="descricao-produto" style="display: none;">Descrição detalhada do produto...</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="produto-destaque" onclick="mostrarModal(this)">
+                            <div class="imagem-produto-destaque">
+                                <img src="assets/iphone1.jpeg" alt="">
+                            </div>
+                        </a>
+                        <div class="texto-produto-destaque">
+                            <span class="tag-produto-destaque">OFERTA</span>
+                            <h3 class="nome-produto-destaque">IPHONE 15 PLUS</h3>
+                            <h2 class="valor-produto-destaque">R$ 400,00</h2>
+                            <p class="descricao-produto" style="display: none;">Revolução. Tudo que você sempre procurou.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="produto-destaque" onclick="mostrarModal(this)">
+                            <div class="imagem-produto-destaque">
+                                <img src="assets/iphone2.jpeg" alt="">
+                            </div>
+                        </a>
+                        <div class="texto-produto-destaque">
+                            <span class="tag-produto-destaque">OFERTA</span>
+                            <h3 class="nome-produto-destaque">IPHONE 14</h3>
+                            <h2 class="valor-produto-destaque">R$ 500,00</h2>
+                            <p class="descricao-produto" style="display: none;">O iPhone 14 tem o sistema de câmera
+                                dupla mais impressionante em um iPhone, para fazer fotos espetaculares em pouca e muita
+                                luz. E você ganha tranquilidade com nosso novo recurso essencial de segurança.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="produto-destaque" onclick="mostrarModal(this)">
+                            <div class="imagem-produto-destaque">
+                                <img src="assets/iphone3.jpeg" alt="">
+                            </div>
+                        </a>
+                        <div class="texto-produto-destaque">
+                            <span class="tag-produto-destaque">OFERTA</span>
+                            <h3 class="nome-produto-destaque">IPHONE 13</h3>
+                            <h2 class="valor-produto-destaque">R$ 600</h2>
+                            <p class="descricao-produto" style="display: none;">o iPhone 13 é a nova geração de
+                                smartphones da Apple, lançada em setembro de 2021. A série iPhone 13 foi anunciada com
+                                quatro modelos, repetindo a geração anterior. O iPhone 13 tem uma tela OLED de 6,1
+                                polegadas, 91,4 cm² (~87.1% de aproveitamento frontal) e resolução de 1170 x 2532px. O
+                                celular está disponível em três capacidades de armazenamento: 128/256/512 GB 6 GB RAM
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <div id="rodape">
+        <footer>
+            <address>
+                <p>Entre em contato conosco:</p>
+                <p>Endereço: Rua das Flores, 123</p>
+                <p>Telefone: (11) 1234-5678</p>
+                <p>Email: contato@exemplo.com</p>
+            </address>
+        </footer>
+    </div>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

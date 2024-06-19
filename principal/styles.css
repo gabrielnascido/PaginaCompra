@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+#cabecalho {
+    text-align: center;
+    padding: 20px;
+}
+
+#logo-iceller {
+    height: 10%;
+    margin: 0 auto;
+}
+
+#logo-iceller img {
+    height: 60px;
+}
+
+#menu-container {
+    text-align: center;
+}
+
+#menu-container nav,
+#menu-container button,
+#menu-container div {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+#menu-container nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#botao-pesquisa,
+#botao-usuario {
+    border: none;
+    padding: 0;
+    margin: 10px;
+    text-align: left;
+}
+
+#botao-pesquisa img,
+#botao-usuario img {
+    height: 35px;
+}
+
+#login-usuario,
+#botao-pesquisa {
+    vertical-align: middle;
+}
+
+.swiper img {
+    height: 300px;
+}
+
+.swiper {
+    height: 400px;
+}
+
+.swiper-slide {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .swiper {
+        height: 300px;
+    }
+}
+
+#produtos-destaque {
+    text-align: center;
+}
+
+#produtos-destaque h2 {
+    margin-bottom: 10px;
+}
+
+#produtos-destaque ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+.produto-destaque {
+    text-align: center;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.produto-destaque a {
+    text-decoration: none;
+    color: black;
+}
+
+.imagem-produto-destaque img {
+    height: auto;
+    max-height: 200px;
+}
+
+.texto-produto-destaque {
+    margin-top: 10px;
+}
+
+.tag-produto-destaque {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 5px 10px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#rodape {
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+}

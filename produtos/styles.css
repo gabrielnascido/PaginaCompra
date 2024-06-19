@@ -1,0 +1,309 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+#cabecalho {
+    text-align: center;
+    padding: 20px;
+}
+
+#logo-iceller {
+    height: 10%;
+    margin: 0 auto;
+}
+
+#logo-iceller img {
+    height: 60px;
+}
+
+#menu-container {
+    text-align: center;
+}
+
+#menu-container nav,
+#menu-container button,
+#menu-container div {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+#menu-container nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#botao-pesquisa,
+#botao-sacola,
+#botao-usuario {
+    border: none;
+    padding: 0;
+    margin: 10px;
+    text-align: left;
+}
+
+#botao-pesquisa img,
+#botao-sacola img,
+#botao-usuario img {
+    height: 35px;
+}
+
+#login-usuario,
+#botao-sacola,
+#botao-pesquisa {
+    vertical-align: middle;
+}
+
+#produtos {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#produtos h2 {
+    margin-bottom: 10px;
+}
+
+#titulo-produtos {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: black;
+    background-size: 100px 100px;
+}
+
+#produtos ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+.produto {
+    text-align: center;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.produto a {
+    text-decoration: none;
+    color: black;
+}
+
+.imagem-produto img {
+    height: auto;
+    max-height: 200px;
+}
+
+.texto-produto {
+    margin-top: 10px;
+}
+
+.tag-produto {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 5px 10px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#rodape {
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+}
+
+/* estilizar o select */
+.select {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* Estilo para o modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#closeModal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#closeModal2 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.btnFinalizarCompra {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    margin-top: 20px;
+    width: 176px;
+}
+
+#modalImage {
+    height: 300px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+#modalProductPrice {
+    font-weight: bold;
+    text-align: center;
+}
+
+#modalProductName,
+#modalProductPrice,
+#modalProductDescription,
+#btnComprar {
+    margin-top: 10px;
+}
+
+#btnComprar {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+}
+
+#listaCarrinho {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+
+
+#btnAplicarCupom {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+#cupom {
+    width: Sacola;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-top: 8px;
+}
+
+element.style {
+    width: 104px;
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+/* Estilo para o input de cupom, o deixando embaixo do input*/
+.erros {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 5px;
+    text-align: start;
+    margin-left: 63px;
+    display: block;
+
+}
+
+#tabelaSacola {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+tr {
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+th {
+    text-align: center;
+    padding: 10px;
+}
+
+.inputQtd {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-top: 8px;
+}
+
+.sucesso {
+    color: green;
+    font-size: 12px;
+    margin-bottom: 5px;
+    text-align: start;
+    margin-left: 63px;
+    display: block;
+}
