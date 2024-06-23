@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iCell.er - Contato</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-...." crossorigin="anonymous" />
+</head>
+
+<body>
+
+  <body>
+    <header>
+      <div id="cabecalho">
+        <a id="logo-iceller" href="../principal/index.html" title="iCell.er"><img src="./assets/logo-iceller.png"></a>
+      </div>
+      <div id="menu-container">
+        <nav>
+          <div id="item-menu-inicial">
+            <a class="menu-item" href="../principal/index.html">PÁGINA
+              INICIAL</a>
+          </div>
+          <div id="item-menu-novos">
+            <a class="menu-item" href="../produtos/index.html">IPHONES
+              NOVOS</a>
+          </div>
+          <div id="item-menu-seminovos">
+            <a class="menu-item">IPHONES SEMINOVOS</a>
+          </div>
+          <div id="item-menu-acessorios">
+            <a class="menu-item">ACESSORIOS</a>
+          </div>
+          <div id="item-menu-lancamentos">
+            <a class="menu-item">LANCAMENTOS (PRE-VENDA)</a>
+          </div>
+        </nav>
+        <a id="botao-pesquisa"><img src="./assets/botao-pesquisa.png"></a>
+        <div id="login-usuario">
+          <a id="botao-usuario" href="../usuario/index.html"><img src="./assets/botao-usuario.png"></a>
+        </div>
+        <div id="botao-sacola">
+          <a id="botao-sacola-link" href="#" onclick="mostrarSacola()">
+            <img src="./assets/botao-sacola.png" alt="Sacola de Compras">
+          </a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div id="modalMensagem" class="modal">
+        <div class="modal-content">
+          <span class="fas fa-times" id="closeModal" onclick="fecharModalMensagem()"></span>
+          <h2 id="tituloModal"></h2>
+          <div id="mensagemModalDiv">
+            <span id="mensagemModal"></span>
+          </div>
+          <div id="botoesDiv">
+            <button id="btnConfirm">CONFIRMAR</button>
+            <button id="btnCancel" onclick="fecharModalMensagem()">CANCELAR</button>
+          </div>
+        </div>
+      </div>
+      <div id="container">
+        <div id="content">
+          <div id="contato">
+              <h1>Entre em contato!</h1>
+              <label for="nome">Nome:</label>
+              <input type="text" id="nome" name="nome" placeholder="Insira seu nome" >
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" placeholder="Insira seu email" >
+              <label for="assunto">Assunto:</label>
+              <input type="text" id="assunto" name="assunto" placeholder="Insira o assunto" >
+              <label for="mensagem">Mensagem:</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Insira sua mensagem!"></textarea>
+              <input type="submit" onclick="enviarContato()" ></input>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div id="rodape">
+      <footer>
+          <address>
+              <p>Entre em contato conosco:</p>
+              <p>Endereço: Rua das Flores, 123</p>
+              <p>Telefone: (11) 1234-5678</p>
+              <p>Email: contato@exemplo.com</p>
+          </address>
+      </footer>
+  </div>
+    <script src="script.js"></script>
+  </body>
+
+
+</html>

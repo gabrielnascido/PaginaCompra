@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>iCell.er - Usuario</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-...." crossorigin="anonymous" />
 </head>
 
 <body>
@@ -53,6 +55,19 @@
         </div>
     </header>
     <main>
+      <div id="modalMensagem" class="modal">
+        <div class="modal-content">
+            <span class="fas fa-times" id="closeModal" onclick="fecharModalMensagem()"></span>
+            <h2 id="tituloModal"></h2>
+            <div id="mensagemModalDiv">
+                <span id="mensagemModal"></span>
+            </div>
+            <div id="botoesDiv">
+                <button id="btnConfirm">CONFIRMAR</button>
+                <button id="btnCancel" onclick="fecharModalMensagem()">CANCELAR</button>
+            </div>
+        </div>
+    </div>
       <div class="container">
         <a class="links" id="paracadastro"></a>
         <a class="links" id="paralogin"></a>
@@ -64,13 +79,13 @@
               <h1>Login</h1>
               <p>
                 <label for="email_login">Seu e-mail</label>
-                <input id="email_login" name="email_login" required="required" type="text"
+                <input id="email_login" name="email_login" type="text"
                   placeholder="contato@htmlecsspro.com" />
               </p>
 
               <p>
                 <label for="senha_login">Sua senha</label>
-                <input id="senha_login" name="senha_login" required="required" type="password" placeholder="1234" />
+                <input id="senha_login" name="senha_login" type="password" placeholder="1234" />
               </p>
 
               <p>
@@ -99,6 +114,7 @@
               <p><strong>Data de Nascimento:</strong> <span id="userInfoDataNascimento"></span></p>
               <p><strong>CEP:</strong> <span id="userInfoCEP"></span></p>
               <p><strong>Endereço:</strong> <span id="userInfoRua"></span></p>
+              <p><strong>Número:</strong> <span id="userInfoNumero"></span></p>
               <p><strong>Bairro:</strong> <span id="userInfoBairro"></span></p>
               <p><strong>Cidade:</strong> <span id="userInfoCidade"></span></p>
               <p><strong>UF:</strong> <span id="userInfoUF"></span></p>
@@ -113,48 +129,61 @@
 
               <p>
                 <label for="nome_cad">Seu nome</label>
-                <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="Seu nome completo" />
+                <input id="nome_cad" name="nome_cad"  type="text" placeholder="Seu nome completo" />
               </p>
 
               <p>
-                <label for="cpf_cad">Seu e-mail</label>
-                <input id="cpf_cad" name="cpf_cad" required="required" type="number" placeholder="Seu CPF" />
+                <label for="cpf_cad">Seu CPF</label>
+                <input id="cpf_cad" name="cpf_cad"  type="number" placeholder="Seu CPF" />
               </p>
               <p>
                 <label for="data_cad">Sua data de nascimento</label>
-                <input id="data_cad" name="data_cad" required="required" type="date"
+                <input id="data_cad" name="data_cad"  type="date"
                   placeholder="Sua data de nascimento" />
               </p>
               <p>
                 <label for="cep_cad">Seu CEP</label>
-                <input id="cep_cad" name="cep_cad" required="required" type="number" placeholder="Seu CEP" />
+                <input id="cep_cad" name="cep_cad"  type="number" placeholder="Seu CEP" />
               </p>
               <p>
                 <label for="rua_cad">Seu endereço</label>
-                <input id="rua_cad" name="rua_cad" required="required" type="text" placeholder="Rua, número" />
+                <input id="rua_cad" name="rua_cad"  type="text" placeholder="Seu endereço" />
+              </p>
+              <p>
+                <label for="numero_cad">Seu número</label>
+                <input id="numero_cad" name="numero_cad"  type="number" placeholder="Seu número" />
               </p>
               <p>
                 <label for="bairro_cad">Seu bairro</label>
-                <input id="bairro_cad" name="bairro_cad" required="required" type="text" placeholder="Seu bairro" />
+                <input id="bairro_cad" name="bairro_cad"  type="text" placeholder="Seu bairro" />
               </p>
               <p>
                 <label for="cidade_cad">Sua cidade</label>
-                <input id="cidade_cad" name="cidade_cad" required="required" type="text" placeholder="Sua cidade" />
+                <input id="cidade_cad" name="cidade_cad"  type="text" placeholder="Sua cidade" />
               </p>
               <p>
                 <label for="uf_cad">Sua UF</label>
-                <input id="uf_cad" name="uf_cad" required="required" type="text" placeholder="Sua UF" />
+                <input id="uf_cad" name="uf_cad"  type="text" placeholder="Sua UF" />
               </p>
               <p>
                 <label for="email_cad">Seu e-mail</label>
-                <input id="email_cad" name="email_cad" required="required" type="email"
+                <input id="email_cad" name="email_cad"  type="email"
                   placeholder="Seu email, incluindo @ e provedor" />
               </p>
               <p>
                 <label for="senha_cad">Sua senha</label>
-                <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="•••••••••" />
+                <input id="senha_cad" name="senha_cad"  type="password" placeholder="•••••••••" />
+                <span style="
+                font-size: 12px;
+                margin-left: 5px;
+                color: darkslategray;
+                "   >Sua senha deve conter no minimo 8 caracteres</span>
               </p>
               <p>
+                <label for="senha_conf">Confirme sua senha</label>
+                <input id="senha_conf" name="senha_conf"  type="password" placeholder="•••••••••" />
+              <p>
+
                 <input type="submit" value="Cadastrar" />
               </p>
 
@@ -167,6 +196,7 @@
         </div>
       </div>
     </main>
+    
     <script src="script.js"></script>
   </body>
 

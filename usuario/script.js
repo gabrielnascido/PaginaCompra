@@ -5,51 +5,66 @@ function cadastrar() {
     var cpf = document.getElementById('cpf_cad').value;
     var cep = document.getElementById('cep_cad').value;
     var rua = document.getElementById('rua_cad').value;
+    var numero = document.getElementById('numero_cad').value;
     var bairro = document.getElementById('bairro_cad').value;
     var cidade = document.getElementById('cidade_cad').value;
     var uf = document.getElementById('uf_cad').value;
     var dataNascimento = document.getElementById('data_cad').value;
     var senha = document.getElementById('senha_cad').value;
+    var confirmacaoSenha = document.getElementById('senha_conf').value;
 
     // Limpe as mensagens de erro anteriores
 
     // Validação: Nome, E-mail, CPF, CEP, Rua, Bairro, Cidade, UF, Número, Data de Nascimento, Senha não devem estar vazios
     if (
-        nome === '' || email === '' || cpf === '' || cep === '' || rua === '' ||
+        nome === '' || email === '' || cpf === '' || cep === '' || rua === '' || numero === '' ||
         bairro === '' || cidade === '' || uf === '' || dataNascimento === '' || senha === ''
     ) {
-        alert('Preenchea todos os campos obrigatórios.');
+        mostarModalMensagem("ERRO", "Preencha todos os campos obrigatórios.");
         return;
     }
 
     // Validação: E-mail deve estar no formato correto
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-        alert('E-mail inválido.');
+        mostarModalMensagem("ERRO", "E-mail inválido.");
         return;
     }
 
     // Validação: CEP deve conter apenas números
     if (! /^\d+$/.test(cep)) {
-        alert('CEP deve conter apenas números.');
+        mostarModalMensagem("ERRO", "CEP deve conter apenas números.");
+        return;
+    }
+
+    // Validação: Número deve conter apenas números
+    if (! /^\d+$/.test(numero)) {
+        mostarModalMensagem("ERRO", "Número deve conter apenas números.");
         return;
     }
 
     // Validação: CPF deve conter apenas números e ser válido
     if (! /^\d{11}$/.test(cpf) || !validarCPF(cpf)) {
-        alert('CPF inválido.');
+        mostarModalMensagem("ERRO", "CPF inválido.");
         return;
     }
 
+    // Validação: senha e confirmação de senha devem ser iguais
+    if (senha !== confirmacaoSenha) {
+        mostarModalMensagem("ERRO", "Senha e confirmação de senha não conferem.");
+        return;
+    }
+
+
     // Validação: Data de Nascimento deve ser uma data válida e o usuário deve ter 18 anos ou mais
     if (!validarDataNascimento(dataNascimento)) {
-        alert('Data de Nascimento inválida. Você deve ter pelo menos 18 anos.');
+        mostarModalMensagem("ERRO", "Data de Nascimento inválida. Você deve ter pelo menos 18 anos.");
         return;
     }
 
     // Validação: Senha deve ter no mínimo 8 dígitos
     if (senha.length < 8) {
-        alert('A senha deve ter pelo menos 8 digitos.');
+        mostarModalMensagem("ERRO", "A senha deve ter pelo menos 8 dígitos.");
         return;
     }
 
@@ -60,6 +75,7 @@ function cadastrar() {
         cpf: cpf,
         cep: cep,
         rua: rua,
+        numero: numero,
         bairro: bairro,
         cidade: cidade,
         uf: uf,
@@ -69,10 +85,97 @@ function cadastrar() {
 
     // Armazena o objeto do usuário no Local Storage
     localStorage.setItem(email, JSON.stringify(usuario));
+    mostarModalMensagem("SUCESSO", "Usuário cadastrado com sucesso! :D <p> Boas compras!")
 
-    // Exibe uma mensagem para o usuário
-    alert('Cadastro realizado com sucesso!');
+    //loga o usuario
+    localStorage.setItem('usuarioLogado', email);
+    exibirInformacoesUsuario(usuario);
 }
+
+//Função para buscar o CEP
+function buscarCEP() {
+    var cep = document.getElementById('cep_cad').value;
+
+    if (!/^\d+$/.test(cep)) {
+        mostarModalMensagem("ERRO", "CEP deve conter apenas números.");
+        return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    var targetUrl = 'https://viacep.com.br/ws/' + cep + '/json/';
+    xhr.open('GET', targetUrl, true);
+
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            var resposta = JSON.parse(xhr.responseText);
+            document.getElementById('rua_cad').value = resposta.logradouro;
+            document.getElementById('bairro_cad').value = resposta.bairro;
+            document.getElementById('cidade_cad').value = resposta.localidade;
+            document.getElementById('uf_cad').value = resposta.uf;
+            document.getElementById('modalMensagem').style.display = 'none';
+
+
+            document.getElementById('rua_cad').readOnly = true;
+            document.getElementById('bairro_cad').readOnly = true;
+            document.getElementById('cidade_cad').readOnly = true;
+            document.getElementById('uf_cad').readOnly = true;
+            document.getElementById('rua_cad').style.backgroundColor = '#f0f0f0';
+            document.getElementById('bairro_cad').style.backgroundColor = '#f0f0f0';
+            document.getElementById('cidade_cad').style.backgroundColor = '#f0f0f0';
+            document.getElementById('uf_cad').style.backgroundColor = '#f0f0f0';
+            
+
+            mostarModalMensagem("SUCESSO", "CEP encontrado com sucesso <p> Por gentileza, não esqueça de completar com o número do endereço! ;)",);
+
+            document.getElementById('numero_cad').focus();
+
+        } if (document.getElementById('rua__cad').value == 'undefined'){
+            mostarModalMensagem("ERRO", "CEP não encontrado. Por gentileza, informe os dados manualmente ou verifique o CEP informado.");
+            document.getElementById('rua_cad').readOnly = false;
+            document.getElementById('bairro_cad').readOnly = false;
+            document.getElementById('cidade_cad').readOnly = false;
+            document.getElementById('uf_cad').readOnly = false;
+
+            document.getElementById('rua_cad').style.backgroundColor = '#ffffff';
+            document.getElementById('bairro_cad').style.backgroundColor = '#ffffff';
+            document.getElementById('cidade_cad').style.backgroundColor = '#ffffff';
+            document.getElementById('uf_cad').style.backgroundColor = '#ffffff';
+            
+            document.getElementById('rua_cad').value = '';
+            document.getElementById('bairro_cad').value = '';
+            document.getElementById('cidade_cad').value = '';
+            document.getElementById('uf_cad').value = '';
+        }
+    };
+
+    // Adiciona tratamento para erros de rede ou CORS
+    xhr.onerror = function () {
+        mostarModalMensagem("ERRO", "CEP não encontrado. Por gentileza, informe os dados manualmente ou verifique o CEP informado.");
+        document.getElementById('rua_cad').readOnly = false;
+        document.getElementById('bairro_cad').readOnly = false;
+        document.getElementById('cidade_cad').readOnly = false;
+        document.getElementById('uf_cad').readOnly = false;
+
+        document.getElementById('rua_cad').style.backgroundColor = '#ffffff';
+        document.getElementById('bairro_cad').style.backgroundColor = '#ffffff';
+        document.getElementById('cidade_cad').style.backgroundColor = '#ffffff';
+        document.getElementById('uf_cad').style.backgroundColor = '#ffffff';
+        
+        document.getElementById('rua_cad').value = '';
+        document.getElementById('bairro_cad').value = '';
+        document.getElementById('cidade_cad').value = '';
+        document.getElementById('uf_cad').value = '';
+    };
+
+    xhr.send();
+}
+
+//adiciona para que a função buscar cep seja chamada ao sair do campo
+document.getElementById('cep_cad').addEventListener('blur', buscarCEP);
+
+//adiciona para que a função buscar cep seja chamada ao sair do campo
+document.getElementById('cep_cad').addEventListener('blur', buscarCEP);
+
 
 // Função para validar Data de Nascimento
 function validarDataNascimento(dataNascimento) {
@@ -138,6 +241,7 @@ function exibirInformacoesUsuario(usuario) {
     document.getElementById('userInfoCPF').textContent = usuario.cpf;
     document.getElementById('userInfoCEP').textContent = usuario.cep;
     document.getElementById('userInfoRua').textContent = usuario.rua;
+    document.getElementById('userInfoNumero').textContent = usuario.numero;
     document.getElementById('userInfoBairro').textContent = usuario.bairro;
     document.getElementById('userInfoCidade').textContent = usuario.cidade;
     document.getElementById('userInfoUF').textContent = usuario.uf;
@@ -180,10 +284,10 @@ function login() {
             // Exibe as informações do usuário
             exibirInformacoesUsuario(usuario);
         } else {
-            alert('Senha incorreta. Tente novamente.');
+            mostarModalMensagem("ERRO", "Senha incorreta. Tente novamente.");
         }
     } else {
-        alert('Usuário não encontrado. Por favor, cadastre-se.');
+        mostarModalMensagem("ERRO", "Usuário não encontrado. Por favor, cadastre-se.");
     }
 }
 
@@ -204,3 +308,59 @@ function verificarStatusUsuario() {
 
 // Chamada da função para verificar o status do usuário ao carregar a página
 verificarStatusUsuario();
+
+
+function mostarModalMensagem(titulo, mensagem, callbackYes = null, callbackNo = null) {
+    var modalMensagem = document.getElementById('modalMensagem');
+    var mensagemModal = document.getElementById('mensagemModal');
+    var tituloModal = document.getElementById('tituloModal');
+    var confirmYes = document.getElementById("btnConfirm");
+    var confirmNo = document.getElementById("btnCancel");
+
+    confirmYes.style.display = 'none';
+    confirmNo.style.display = 'none';
+
+    modalMensagem.style.display = 'block';
+    mensagemModal.innerHTML = mensagem;
+    mensagemModal.style.fontWeight = 'bold';
+
+    modalMensagem.style.zIndex = 10;
+
+    switch (titulo) {
+        case "ERRO":
+            tituloModal.innerHTML = '<i class="fa-solid fa-exclamation-triangle fa-2xl" style="color: #black;"></i>';
+            break;
+        case "SUCESSO":
+            tituloModal.innerHTML = '<i class="fa-solid fa-check fa-2xl" style="color: #black;"></i>';
+            break;
+        case "INFO":
+            tituloModal.innerHTML = '<i class="fa-solid fa-info fa-2xl" style="color: #black;"></i>';
+            break;
+        case "PERGUNTA":
+            tituloModal.innerHTML = '<i class="fa-solid fa-question fa-2xl" style="color: #black;"></i>';
+            confirmYes.style.display = 'block';
+            confirmNo.style.display = 'block';
+
+            confirmYes.addEventListener("click", function () {
+                if (typeof callbackYes === "function") {
+                    callbackYes();  // Chamada do callback apenas no clique do botão
+                }
+                modalMensagem.style.display = "none";
+            });
+
+            confirmNo.addEventListener("click", function () {
+                if (typeof callbackNo === "function") {
+                    callbackNo();  // Chamada do callback apenas no clique do botão
+                }
+                modalMensagem.style.display = "none";
+            });
+            break;
+        default:
+            break;
+    }
+}
+
+
+function fecharModalMensagem() {
+    document.getElementById('modalMensagem').style.display = 'none';
+}

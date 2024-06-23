@@ -66,7 +66,7 @@ body {
 }
 
 /* content que contem os formulários */
-.content {
+#content {
   width: 500px;
   margin: 0px auto;
   position: relative;
@@ -162,47 +162,8 @@ input[type="submit"]:hover {
   background: #4ab3c6;
 }
 
-/*marcando os links para mudar de um formulário para outro */
-.link {
-  position: absolute;
-  background: black;
-  color: white;
-  left: 0px;
-  height: 60px;
-  width: 438px;
-  padding: 20px 30px 20px 30px;
-  font-size: 16px;
-  text-align: right;
-  border-top: 1px solid #dbe5e8;
 
-  -webkit-border-radius: 0 0 5px 5px;
-  border-radius: 0 0 5px 5px;
-}
-
-.link a {
-  font-weight: bold;
-  background: #f7f8f1;
-  padding: 16px;
-  color: rgb(0, 0, 0);
-  margin-left: 10px;
-  border: 1px solid #cbd518;
-
-  -webkit-border-radius: 4px;
-  border-radius: 40px;
-
-  -webkit-transition: all 0.4s linear;
-  transition: all 0.4s linear;
-}
-
-.link a:hover {
-  color: #39bfd7;
-  background: #f7f7f7;
-  border: 1px solid #4ab3c6;
-}
-
-/* estilos para para ambos os formulários */
-#cadastro,
-#login {
+#contato {
   position: absolute;
   top: 50px;
   width: 88%;
@@ -222,6 +183,13 @@ input[type="submit"]:hover {
   animation-duration: 0.5s;
   animation-timing-function: ease;
   animation-fill-mode: both;
+}
+
+#container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 #paracadastro:target~.content #cadastro,
@@ -320,13 +288,21 @@ input[type="submit"]:hover {
   border: 1px solid black; 
 }
 
+label {
+  margin-right: 300px;
+}
+
+#nome, #email, #assunto, #mensagem{
+  margin-bottom: 10px;
+}
 
 #mensagem {
-  margin-top: 20px;
   margin-bottom: 20px;
-  text-align: center;
-  padding: 15px;
+  text-align: left;
   border-radius: 10px;
+  width: 95%;
+  height: 200px;
+  padding: 3%;
 }
 
 #mensagemModalDiv {
@@ -413,4 +389,27 @@ input[type="submit"]:hover {
 .modal-content h2 {
   margin-bottom: 10px;
   text-align: center;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#content {
+  flex: 1;
+}
+
+#rodape {
+  margin-top: 50%;
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 20px;
+  bottom: 0;
+  width: 100%;
 }

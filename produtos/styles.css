@@ -59,7 +59,6 @@
 
 #produtos {
     text-align: center;
-    margin-top: 30px;
 }
 
 #produtos h2 {
@@ -79,21 +78,27 @@
     background-size: 100px 100px;
 }
 
-#produtos ul {
+#lista-produtos {
     list-style: none;
     padding: 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    justify-content: center;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens sejam quebrados para a linha seguinte */
+    justify-content: center; /* Alinha os itens no centro horizontalmente */
+    gap: 10px; /* Espaçamento entre os itens */
     margin-top: 20px;
+}
 
+#produtos ul li {
+    width: calc(25% - 10px); /* Ajuste conforme necessário */
+    margin-bottom: 10px;
+    /* Outros estilos conforme necessário */
 }
 
 .produto {
     text-align: center;
     margin: 10px 0;
     padding: 10px;
+    overflow: hidden;
 }
 
 .produto a {
@@ -231,13 +236,14 @@ li {
     margin-bottom: 10px;
 }
 
-
+#cupomDiv {
+    margin-top: 20px;
+}
 
 #btnAplicarCupom {
     background-color: black;
     color: white;
-    border: none;
-    padding: 10px;
+    padding: 6px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 12px;
@@ -245,8 +251,7 @@ li {
 }
 
 #cupom {
-    width: Sacola;
-    padding: 10px;
+    padding: 6px;
     border: 1px solid black;
     border-radius: 5px;
     margin-bottom: 5px;
@@ -262,16 +267,26 @@ element.style {
     text-align: center;
 }
 
+#erroCupom {
+    background-color: indianred;
+    color: black;
+    padding: 10px;
+    margin: 5px;
+    font-size: 14px;
+    border-radius: 6px;
+    text-align: center;
+    display: none;
+}
 
-/* Estilo para o input de cupom, o deixando embaixo do input*/
-.erros {
-    color: red;
-    font-size: 12px;
-    margin-bottom: 5px;
-    text-align: start;
-    margin-left: 63px;
-    display: block;
-
+#sucessoCupom {
+    background-color: lightgreen;
+    color: black;
+    padding: 10px;
+    margin: 5px;
+    font-size: 14px;
+    border-radius: 6px;
+    text-align: center;
+    display: none;
 }
 
 #tabelaSacola {
@@ -307,3 +322,65 @@ th {
     margin-left: 63px;
     display: block;
 }
+
+#precoTotalDiv {
+    text-align: right;
+    margin-right: 0px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#precoTotal {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+#mensagem {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#mensagemModalDiv {
+    padding: 20px;
+    background-color: lightgray;
+    border-radius: 6px;
+    margin-top: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#tituloModal {
+    margin-top: 25px;
+}
+
+#btnConfirm {
+    background-color: lightgreen;
+    color: black;
+    border: none;
+    padding: 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    margin-top: 20px;
+    width: 176px;
+}
+
+#btnCancel {
+    background-color: indianred;
+    color: black;
+    border: none;
+    padding: 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    margin-top: 20px;
+    width: 176px;
+}
+

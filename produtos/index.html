@@ -13,21 +13,25 @@
 <body>
     <header>
         <div id="cabecalho">
-            <a id="logo-iceller"
-                href="../principal/index.html"
-                title="iCell.er"><img src="./assets/logo-iceller.png"></a>
+            <a id="logo-iceller" href="../principal/index.html" title="iCell.er"><img
+                    src="./assets/logo-iceller.png"></a>
         </div>
         <div id="menu-container">
             <nav>
                 <div id="item-menu-inicial">
-                    <a class="menu-item"
-                        href="../principal/index.html">PÁGINA
+                    <a class="menu-item" href="../principal/index.html">PÁGINA
                         INICIAL</a>
                 </div>
                 <div id="item-menu-novos">
-                    <a class="menu-item"
-                        href="./index.html">IPHONES
-                        NOVOS</a>
+                    <a class="menu-item" href="./index.html" style="
+                                                                        padding-top: 10px;
+                                                                        padding-left: 10px;
+                                                                        padding-right: 10px;
+                                                                        padding-bottom: 45px;
+                                                                        background-color: black;
+                                                                        color: white;
+                                                                        padding-top: 10;
+                                                                        padding-top: 10px; ">IPHONES NOVOS</a>
                 </div>
                 <div id="item-menu-seminovos">
                     <a class="menu-item">IPHONES SEMINOVOS</a>
@@ -39,11 +43,9 @@
                     <a class="menu-item">LANCAMENTOS (PRE-VENDA)</a>
                 </div>
             </nav>
-            <a id="botao-pesquisa" href="caminhoBuscar"><img src="./assets/botao-pesquisa.png"></a>
+            <a id="botao-pesquisa" onclick="filtrarProdutos()"><img src="./assets/botao-pesquisa.png"></a>
             <div id="login-usuario">
-                <a id="botao-usuario"
-                    href="../usuario/index.html"><img
-                        src="./assets/botao-usuario.png"></a>
+                <a id="botao-usuario" href="../usuario/index.html"><img src="./assets/botao-usuario.png"></a>
             </div>
             <div id="botao-sacola">
                 <a id="botao-sacola-link" href="#" onclick="mostrarSacola()">
@@ -55,6 +57,7 @@
     <main>
         <div id="produtos">
             <h2 id="titulo-produtos">Iphones Novos</h2>
+            <h5 id="breadCumb" style="text-align: left;margin-left: 20px;">Início > Iphones > Novos</h5>
             <div class="product-listing__sort">
                 <div class="desktop-sort">
                     <div data-select="true" class="sort / title-small">
@@ -68,218 +71,8 @@
                     </div>
                 </div>
             </div>
-            <ul>
-                <li>
-                    <div class="produto" onclick="mostrarModal(this)">
-                        <a href="#">
-                            <div class="imagem-produto">
-                                <img src="assets/iphone3.jpeg" alt="">
-                            </div>
-                        </a>
-                        <div class="texto-produto">
-                            <span class="tag-produto">OFERTA</span>
-                            <h3 class="nome-produto">IPHONE 13</h3>
-                            <h2 class="valor-produto">R$ 600,00
-                            </h2>
-                            <p class="descricao-produto" style="display: none;">o iPhone 13 é a nova geração de
-                                smartphones da Apple, lançada em setembro de 2021. A série iPhone 13 foi anunciada com
-                                quatro modelos, repetindo a geração anterior. O iPhone 13 tem uma tela OLED de 6,1
-                                polegadas, 91,4 cm² (~87.1% de aproveitamento frontal) e resolução de 1170 x 2532px. O
-                                celular está disponível em três capacidades de armazenamento: 128/256/512 GB 6 GB RAM
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="produto" onclick="mostrarModal(this)">
-                        <div class="imagem-produto">
-                            <img src="assets/iphone2.jpeg" alt="">
-                        </div>
-                        </a>
-                        <div class="texto-produto">
-                            <span class="tag-produto">OFERTA</span>
-                            <h3 class="nome-produto">IPHONE 14</h3>
-                            <h2 class="valor-produto">R$ 500,00</h2>
-                            <p class="descricao-produto" style="display: none;">O iPhone 14 tem o sistema de câmera
-                                dupla mais impressionante em um iPhone, para fazer fotos espetaculares em pouca e muita
-                                luz. E você ganha tranquilidade com nosso novo recurso essencial de segurança.</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="produto" onclick="mostrarModal(this)">
-                        <a href="#">
-                            <div class="imagem-produto">
-                                <img src="assets/iphone1.jpeg" alt="">
-                            </div>
-                        </a>
-                        <div class="texto-produto">
-                            <span class="tag-produto">OFERTA</span>
-                            <h3 class="nome-produto">IPHONE 13</h3>
-                            <h2 class="valor-produto">R$ 600,00</h2>
-                            <p class="descricao-produto" style="display: none;">o iPhone 13 é a nova geração de
-                                smartphones da Apple, lançada em setembro de 2021. A série iPhone 13 foi anunciada com
-                                quatro modelos, repetindo a geração anterior. O iPhone 13 tem uma tela OLED de 6,1
-                                polegadas, 91,4 cm² (~87.1% de aproveitamento frontal) e resolução de 1170 x 2532px. O
-                                celular está disponível em três capacidades de armazenamento: 128/256/512 GB 6 GB RAM
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="produto" onclick="mostrarModal(this)">
-                        <a href="#">
-                            <div class="imagem-produto">
-                                <img src="assets/iphone3.jpeg" alt="">
-                            </div>
-                        </a>
-                        <div class="texto-produto">
-                            <h3 class="nome-produto"> IPHONE 12</h3>
-                            <h2 class="valor-produto">R$ 450,00</h2>
-                            <p class="descricao-produto" style="display: none;">Lorem ipsum, dolor sit amet consectetur
-                                adipisicing elit. Consectetur nesciunt odio sunt consequuntur amet facere, doloremque,
-                                eaque necessitatibus perspiciatis non laborum. Recusandae, repellendus aut reiciendis et
-                                quo ipsum iste facere?</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="produto" onclick="mostrarModal(this)">
-                        <a href="#">
-                            <div class="imagem-produto">
-                                <img src="assets/iphone1.jpeg" alt="">
-                            </div>
-                        </a>
-                        <div class="texto-produto">
-                            <span class="tag-produto">PRÉ-VENDA</span>
-                            <h3 class="nome-produto">IPHONE 12</h3>
-                            <h2 class="valor-produto">R$ 300,00</h2>
-                            <p class="descricao-produto" style="display: none;">Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Inventore assumenda laboriosam deserunt rem recusandae explicabo
-                                dignissimos quos sequi facere voluptates incidunt, optio molestias minus, autem nobis
-                                dolore neque possimus ducimus?</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="produto" onclick="mostrarModal(this)">
-                        <a href="#">
-                            <div class="imagem-produto">
-                                <img src="assets/iphone2.jpeg" alt="">
-                            </div>
-                        </a>
-                        <div class="texto-produto">
-                            <span class="tag-produto">OFERTA</span>
-                            <h3 class="nome-produto"> IPHONE 15</h3>
-                            <h2 class="valor-produto">R$ 500,00</h2>
-                            <p class="descricao-produto" style="display: none;">Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Inventore assumenda laboriosam deserunt rem recusandae explicabo
-                                dignissimos quos sequi facere voluptates incidunt, optio molestias minus, autem nobis
-                                dolore neque possimus ducimus?</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="produto" onclick="mostrarModal(this)">
-                        <a href="#">
-                            <div class="imagem-produto">
-                                <img src="assets/iphone1.jpeg" alt="">
-                            </div>
-                        </a>
-                        <div class="texto-produto">
-                            <h3 class="nome-produto"> IPHONE 15 PRO MAX</h3>
-                            <h2 class="valor-produto">R$ 850,00</h2>
-                            <p class="descricao-produto" style="display: none;">Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Inventore assumenda laboriosam deserunt rem recusandae explicabo
-                                dignissimos quos sequi facere voluptates incidunt, optio molestias minus, autem nobis
-                                dolore neque possimus ducimus?</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="produto" onclick="mostrarModal(this)">
-                        <a href="#">
-                            <div class="imagem-produto">
-                                <img src="assets/iphone2.jpeg" alt="">
-                            </div>
-                        </a>
-                        <div class="texto-produto">
-                            <span class="tag-produto">LANCAMENTO</span>
-                            <h3 class="nome-produto"> IPHONE 15 PLUS</h3>
-                            <h2 class="valor-produto">R$ 900,00</h2>
-                            <p class="descricao-produto" style="display: none;">Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Inventore assumenda laboriosam deserunt rem recusandae explicabo
-                                dignissimos quos sequi facere voluptates incidunt, optio molestias minus, autem nobis
-                                dolore neque possimus ducimus?</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="produto" onclick="mostrarModal(this)">
-                        <a href="#">
-                            <div class="imagem-produto">
-                                <img src="assets/iphone3.jpeg" alt="">
-                            </div>
-                        </a>
-                        <div class="texto-produto">
-                            <h3 class="nome-produto"> IPHONE 11</h3>
-                            <h2 class="valor-produto">R$ 150,00</h2>
-                            <p class="descricao-produto" style="display: none;">Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Inventore assumenda laboriosam deserunt rem recusandae explicabo
-                                dignissimos quos sequi facere voluptates incidunt, optio molestias minus, autem nobis
-                                dolore neque possimus ducimus?</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="produto" onclick="mostrarModal(this)">
-                        <a href="#">
-                            <div class="imagem-produto">
-                                <img src="assets/iphone1.jpeg" alt="">
-                            </div>
-                        </a>
-                        <div class="texto-produto">
-                            <h3 class="nome-produto"> IPHONE 7</h3>
-                            <h2 class="valor-produto">R$ 230,00</h2>
-                            <p class="descricao-produto" style="display: none;">Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Inventore assumenda laboriosam deserunt rem recusandae explicabo
-                                dignissimos quos sequi facere voluptates incidunt, optio molestias minus, autem nobis
-                                dolore neque possimus ducimus?</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="produto" onclick="mostrarModal(this)">
-                        <a href="#">
-                            <div class="imagem-produto">
-                                <img src="./assets/iphone2.jpeg" alt="">
-                            </div>
-                        </a>
-                        <div class="texto-produto">
-                            <h3 class="nome-produto"> IPHONE 13 PRO MAX</h3>
-                            <h2 class="valor-produto">R$ 700,00</h2>
-                            <p class="descricao-produto" style="display: none;">Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Inventore assumenda laboriosam deserunt rem recusandae explicabo
-                                dignissimos quos sequi facere voluptates incidunt, optio molestias minus, autem nobis
-                                dolore neque possimus ducimus?</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="produto" onclick="mostrarModal(this)">
-                        <a href="#">
-                            <div class="imagem-produto">
-                                <img src="./assets/iphone2.jpeg" alt="">
-                            </div>
-                        </a>
-                        <div class="texto-produto">
-                            <h3 class="nome-produto"> IPHONE 12 PRO</h3>
-                            <h2 class="valor-produto">R$ 600,00</h2>
-                            <p class="descricao-produto" style="display: none;">Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Inventore assumenda laboriosam deserunt rem recusandae explicabo
-                                dignissimos quos sequi facere voluptates incidunt, optio molestias minus, autem nobis
-                                dolore neque possimus ducimus?</p>
-                        </div>
-                    </div>
-                </li>
+            <ul id="lista-produtos">
+                
             </ul>
         </div>
     </main>
@@ -296,6 +89,19 @@
             </div>
         </div>
     </div>
+    <div id="modalMensagem" class="modal">
+        <div class="modal-content">
+            <span class="fas fa-times" id="closeModal" onclick="fecharModalMensagem()"></span>
+            <h2 id="tituloModal"></h2>
+            <div id="mensagemModalDiv">
+                <span id="mensagemModal"></span>
+            </div>
+            <div id="botoesDiv">
+                <button id="btnConfirm">CONFIRMAR</button>
+                <button id="btnCancel" onclick="fecharModalMensagem()">CANCELAR</button>
+            </div>
+        </div>
+    </div>
     <div id="modalSacola" class="modal">
         <div class="modal-content">
             <span class="fas fa-times" id="closeModal" onclick="fecharSacola()"></span>
@@ -304,32 +110,39 @@
                 <label for="lixeira"></label>
             </div>
             <h2>S A C O L A</h2>
-            <table id="tabelaSacola">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>NOME</th>
-                        <th>VALOR UNIT</th>
-                        <th>QUANTIDADE</th>
-                        <th>VALOR</th>
-                    </tr>
-                </thead>
-                <tbody id="corpoTabelaSacola">
-                    <!-- Linhas da tabela serão adicionadas dinamicamente aqui -->
-                </tbody>
-            </table>
-            <p>-----------------------------------------------------------</p>
-            <span id="labelPrecoTotal">PREÇO TOTAL:</span>
-            <span id="precoTotal">R$ 0,00</span>
-            <p>-----------------------------------------------------------</p>
-            <p>
-                <label for="cupom">CUPOM:</label>
-                <input id="cupom" type="text">
-                <button id="btnAplicarCupom" class="fas fa-check" onclick="aplicarDesconto()"></button>
-                <label for="btnAplicarCupom" class="erros" id="erroCupom"></label>
-                <label for="btnAplicarCupom" class="sucesso" id="sucessoCupom"></label>
-                <button class="btnFinalizarCompra" onclick="finalizarCompra()">FINALIZAR COMPRA</button>
-            </p>
+            <div id="mensagem">
+                <p id="mensagem" style="display: none;">
+            </div>
+            <div id="sacolaDiv">
+                <table id="tabelaSacola">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>NOME</th>
+                            <th>VALOR UNIT</th>
+                            <th>QUANTIDADE</th>
+                            <th>VALOR</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoTabelaSacola">
+                        <!-- Linhas da tabela serão adicionadas dinamicamente aqui -->
+                    </tbody>
+                </table>
+                <div id="precoTotalDiv">
+                    <span id="labelPrecoTotal">PREÇO TOTAL:</span>
+                    <span id="precoTotal">R$ 0,00</span>
+                </div>
+                <div id="cupomDiv">
+                    <label for="cupom">CUPOM:</label>
+                    <input id="cupom" type="text">
+                    <button id="btnAplicarCupom" class="fas fa-check" onclick="aplicarDesconto()"></button>
+                    <label for="btnAplicarCupom" class="erros" id="erroCupom"></label>
+                    <label for="btnAplicarCupom" class="sucesso" id="sucessoCupom"></label>
+                </div>
+                <p>
+                    <button class="btnFinalizarCompra" onclick="finalizarCompra()">FINALIZAR COMPRA</button>
+                </p>
+            </div>
         </div>
     </div>
     <div id="rodape">
@@ -339,6 +152,21 @@
                 <p>Endereço: Rua das Flores, 123</p>
                 <p>Telefone: (11) 1234-5678</p>
                 <p>Email: contato@exemplo.com</p>
+                <button style="
+                background-color: black;
+                color: white;
+                border: none;
+                padding: 13px;
+                border-radius: 8px;
+                cursor: pointer;
+                text-align: center;
+                font-weight: bold;
+                margin-top: 20px;
+                width: 400px;        
+            
+            "
+            onclick="window.location.href='../contato/index.html'"
+            > Se preferir, clique aqui e nos mande um email!</button>
             </address>
         </footer>
     </div>
